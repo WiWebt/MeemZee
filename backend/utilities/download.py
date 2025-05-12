@@ -7,8 +7,7 @@ import requests,tempfile
 from .media import register_temp_file, media_download
 import random
 import string
-
-
+import traceback
 
 def download(request):
     if request.method == 'POST':
@@ -24,26 +23,12 @@ def download(request):
             return JsonResponse({'error': 'Missing URL'}, status=400)
 
         try:
-            download_data = get_best_dash_url(url)
-             # Download the video and audio
-            
+            download_data = get_best_dash_url(url)            
             if download_data.get('error'):
                 return JsonResponse({'error': download_data.get('error')}, status=500)
-            
+        
+            # video_audio_url(download_data, request)
 
-            video_file = download_to_temp(download_data.get('video_url'), 'video.mp4')
-            audio_file = download_to_temp(download_data.get('audio_url'), 'audio.m4a')
-            
-            # Merge video and audio
-            output_file = get_temp_file_path('output.mp4')
-            merge_video_audio(video_file, audio_file, output_file)
-
-            # Clean up temporary files
-            os.remove(video_file)
-            os.remove(audio_file)
-
-            file_url, file_id = register_temp_file(output_file, request)
-            download_data["video_audio_url"] = file_url
             return JsonResponse(download_data)
         except Exception as e:
             return JsonResponse({'error': str(e)}, status=500)
@@ -84,6 +69,20 @@ def get_best_dash_url(video_url):
             'error': 'Could not find compatible video+audio streams.'
         }
 
+def video_audio_url(download_data, request):
+    video_file = download_to_temp(download_data.get('video_url'), 'video.mp4')
+    audio_file = download_to_temp(download_data.get('audio_url'), 'audio.m4a')
+    
+    # Merge video and audio
+    output_file = get_temp_file_path('output.mp4')
+    merge_video_audio(video_file, audio_file, output_file)
+
+    # Clean up temporary files
+    os.remove(video_file)
+    os.remove(audio_file)
+
+    file_url, file_id = register_temp_file(output_file, request)
+    download_data["video_audio_url"] = file_url
 
 def download_to_temp(url, suffix=None):
     file_path = get_temp_file_path(suffix)
@@ -110,12 +109,12 @@ def get_temp_file_path(suffix=None):
    
 
 def merge_video_audio(video_file, audio_file, output_file):
-    # Load the video and audio clips
     video = mp.VideoFileClip(video_file)
     audio = mp.AudioFileClip(audio_file)
-    
-    # Set the audio to the video
     video = video.set_audio(audio)
     
-    # Write the final video to a file
-    video.write_videofile(output_file, codec='libx264', audio_codec='aac')
+    try:
+        video.write_videofile(output_file, codec='libx264', audio_codec='aac',verbose=False,logger=None)
+    except Exception as e:
+        traceback.print_exc()
+        raise Exception(f"Failed to while mergin video_audio, Exception {e}")
