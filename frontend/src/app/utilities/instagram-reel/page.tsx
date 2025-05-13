@@ -41,10 +41,10 @@ export default function InstagramReelDownloader() {
       const data = await response.json();
       
       if (!response.ok) {
-        throw new Error(data.error || 'Failed to fetch download URLs');
+        throw new Error('Failed to fetch download URLs' + data);
       }
 
-      setDownloadUrls(data);
+      setDownloadUrls(data as DownloadResponse);
     } catch (err) {
       console.error('Download error:', err);
       setError(err instanceof Error ? err.message : 'Something went wrong');

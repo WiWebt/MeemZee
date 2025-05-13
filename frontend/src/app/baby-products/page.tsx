@@ -1,9 +1,18 @@
 "use client";
 
-import { Container, Box, Typography, Grid, Card, CardContent, CardMedia, Button, Rating } from '@mui/material';
+import { Container, Box, Typography, Card, CardContent, CardMedia, Button, Rating } from '@mui/material';
+import Grid2 from '@mui/material/Unstable_Grid2';
 import Image from 'next/image';
 
-const products = [
+interface Product {
+  id: number;
+  name: string;
+  price: string;
+  rating: number;
+  image: string;
+}
+
+const products: Product[] = [
   {
     id: 1,
     name: 'Soft Baby Blanket',
@@ -71,9 +80,9 @@ export default function BabyProductsStore() {
           Quality products for your little ones
         </Typography>
 
-        <Grid container spacing={4}>
+        <Grid2 container spacing={4}>
           {products.map((product) => (
-            <Grid item xs={12} sm={6} md={3} key={product.id}>
+            <Grid2 key={product.id} xs={12} sm={6} md={3} component="div">
               <Card 
                 sx={{ 
                   height: '100%',
@@ -109,9 +118,9 @@ export default function BabyProductsStore() {
                   </Button>
                 </CardContent>
               </Card>
-            </Grid>
+            </Grid2>
           ))}
-        </Grid>
+        </Grid2>
       </Box>
     </Container>
   );
