@@ -1,0 +1,101 @@
+export const theme = {
+  colors: {
+    primary: {
+      50: '#EFF6FF',
+      100: '#DBEAFE',
+      200: '#BFDBFE',
+      300: '#93C5FD',
+      400: '#60A5FA',
+      500: '#2563EB', // Main primary color
+      600: '#2563EB',
+      700: '#1D4ED8',
+      800: '#1E40AF',
+      900: '#1E3A8A',
+    },
+    secondary: {
+      50: '#F0FDFA',
+      100: '#CCFBF1',
+      200: '#99F6E4',
+      300: '#5EEAD4',
+      400: '#2DD4BF',
+      500: '#0D9488', // Main secondary color
+      600: '#0F766E',
+      700: '#115E59',
+      800: '#134E4A',
+      900: '#042F2E',
+    },
+    accent: {
+      50: '#FFFBEB',
+      100: '#FEF3C7',
+      200: '#FDE68A',
+      300: '#FCD34D',
+      400: '#FBBF24',
+      500: '#F59E0B', // Main accent color
+      600: '#D97706',
+      700: '#B45309',
+      800: '#92400E',
+      900: '#78350F',
+    },
+    gray: {
+      50: '#F9FAFB',
+      100: '#F3F4F6',
+      200: '#E5E7EB',
+      300: '#D1D5DB',
+      400: '#9CA3AF',
+      500: '#6B7280',
+      600: '#4B5563',
+      700: '#374151',
+      800: '#1F2937',
+      900: '#111827',
+    },
+  },
+  fonts: {
+    sans: ['Inter var', 'system-ui', 'sans-serif'],
+    mono: ['JetBrains Mono', 'monospace'],
+  },
+  spacing: {
+    xs: '0.25rem',
+    sm: '0.5rem',
+    md: '1rem',
+    lg: '1.5rem',
+    xl: '2rem',
+    '2xl': '3rem',
+    '3xl': '4rem',
+  },
+  borderRadius: {
+    sm: '0.25rem',
+    md: '0.375rem',
+    lg: '0.5rem',
+    xl: '0.75rem',
+    '2xl': '1rem',
+    full: '9999px',
+  },
+  shadows: {
+    sm: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
+    md: '0 4px 6px -1px rgb(0 0 0 / 0.1)',
+    lg: '0 10px 15px -3px rgb(0 0 0 / 0.1)',
+    xl: '0 20px 25px -5px rgb(0 0 0 / 0.1)',
+  },
+  typography: {
+    h1: {
+      fontSize: '3rem',
+      lineHeight: 1.2,
+      fontWeight: 700,
+    },
+    h2: {
+      fontSize: '2.25rem',
+      lineHeight: 1.3,
+      fontWeight: 600,
+    },
+    h3: {
+      fontSize: '1.875rem',
+      lineHeight: 1.4,
+      fontWeight: 600,
+    },
+    body: {
+      fontSize: '1rem',
+      lineHeight: 1.5,
+      fontWeight: 400,
+    },
+  },
+} as const;

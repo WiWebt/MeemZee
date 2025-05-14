@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "apiBaseUrl": "http://localhost:3001",
+    "websocketUrl": "ws://localhost:3001/ws",
+    "analyticsEnabled": false,
+    "logLevel": "debug"
+  },
+  "stage": {
+    "apiBaseUrl": "https://api-stage.lang-gang.com",
+    "websocketUrl": "ws://api_stage.lang-gang.com/ws",
+    "analyticsEnabled": true,
+    "logLevel": "warn"
+  },
+  "prod": {
+    "apiBaseUrl": "https://api.lang-gang.com",
+    "websocketUrl": "wss://api.lang-gang.com/ws",
+    "analyticsEnabled": true,
+    "logLevel": "error"
+  }
+}

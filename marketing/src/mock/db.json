@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "id": "b3fe",
+      "email": "user@example.com",
+      "preferences": {
+        "marketing_updates": false,
+        "newsletter": true,
+        "product_updates": true,
+        "product_announcements": true,
+        "maintenance": true,
+        "events": true
+      }
+    },
+    {
+      "id": "a4de",
+      "email": "test@gmail.com",
+      "preferences": {
+        "marketing_updates": false,
+        "newsletter": false,
+        "product_updates": false,
+        "product_announcements": false,
+        "maintenance": false,
+        "events": false
+      }
+    },
+    {
+      "id": "4236",
+      "email": "john@example.com",
+      "preferences": {
+        "marketing_updates": true,
+        "newsletter": false,
+        "product_updates": false,
+        "product_announcements": false,
+        "maintenance": false,
+        "events": false
+      }
+    }
+  ]
+}
