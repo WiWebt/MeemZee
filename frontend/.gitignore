@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/.wrangler
 /.pnp
 .pnp.*
 .yarn/*
@@ -39,7 +40,3 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-
-# wrangler files
-.wrangler
-.dev.vars*

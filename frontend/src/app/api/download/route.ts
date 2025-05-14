@@ -11,7 +11,12 @@ export async function POST(request: Request) {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(body),
+      body: JSON.stringify({
+        type: 'reel',
+        source: 'instagram',
+        quality: '720',
+        url: body.url
+      }),
     });
 
     if (!response.ok) {

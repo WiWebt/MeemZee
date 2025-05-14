@@ -1,5 +1,13 @@
-import { redirect } from 'next/navigation';
+import dynamic from 'next/dynamic';
+
+// Client components
+const HomeWrapper = dynamic(() => import('@/components/home/HomeWrapper'));
+const HomeContent = dynamic(() => import('@/components/home/HomeContent'));
 
 export default function Home() {
-  redirect('/baby-products');
+  return (
+    <HomeWrapper>
+      <HomeContent />
+    </HomeWrapper>
+  );
 }
