@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef } from 'react';
+import Script from 'next/script';
 import { motion } from "framer-motion";
 import { Box, Typography, TextField, Button, Card, CardContent, CircularProgress, IconButton, InputAdornment } from '@mui/material';
 import DownloadIcon from '@mui/icons-material/Download';
@@ -155,7 +156,14 @@ export default function Page() {
   };
 
   return (
-    <div className="relative bg-gradient-to-b from-white via-blue-50/10 to-white">
+    <div className="min-h-screen bg-gray-50 py-12">
+      {/* Load AdSense script only on this page */}
+      <Script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5338136896112387"
+        crossOrigin="anonymous"
+        strategy="afterInteractive"
+      />
       <div className="absolute inset-0 bg-pattern-light opacity-70" />
       <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-transparent to-white/80" />
       
