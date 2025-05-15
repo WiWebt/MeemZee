@@ -214,7 +214,7 @@ export default function Page() {
                   variant="contained"
                   type="submit"
                   disabled={loading || !url || !isValidUrl(url)}
-                  className="mt-4 bg-gradient-to-r from-blue-600 to-blue-800 text-white py-3 rounded-lg hover:from-blue-700 hover:to-blue-900 transition-all duration-300"
+                  className="mt-4 bg-gradient-to-r from-blue-600 to-blue-800 !text-white py-3 rounded-lg hover:from-blue-700 hover:to-blue-900 transition-all duration-300"
                 >
                   {loading ? <CircularProgress size={24} /> : 'Download Reel'}
                 </Button>
