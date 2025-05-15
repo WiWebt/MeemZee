@@ -78,7 +78,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-sm leading-6 text-gray-600 max-w-md">
-              Master any language through typing. Learn, practice, and get certified.
+              Simplifying shopping and productivity for everyone.
             </p>
           </div>
           

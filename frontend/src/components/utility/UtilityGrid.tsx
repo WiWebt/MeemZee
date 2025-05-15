@@ -103,8 +103,8 @@ export default function UtilityGrid() {
         <motion.div
           key={utility.name}
           variants={scaleIn}
-          className="enhanced-card group relative overflow-hidden rounded-2xl"
-        >
+          className="enhanced-card group relative overflow-hidden rounded-2xl border border-gray-100 bg-gray-50 shadow transition-all duration-300 transform hover:-translate-y-2 hover:shadow-lg"
+          >
           <Link href={utility.href} className="block p-8">
             <div className={`absolute top-0 right-0 -mt-4 -mr-4 h-32 w-32 rounded-full bg-gradient-to-r ${utility.gradient} opacity-10 group-hover:scale-150 transition-transform duration-500`} />
             <div className="relative flex flex-col h-full">
