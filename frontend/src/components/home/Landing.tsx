@@ -1,82 +1,100 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from "react";
-import SignupDialog from "../global/SignupDialog";
 
 export default function Landing() {
-  const [isSignupOpen, setIsSignupOpen] = useState(false);
-
-  const handleJoinWaitlist = () => {
-    setIsSignupOpen(true);
-  };
-
   return (
-    <div className="relative overflow-hidden bg-gradient-to-b from-white via-blue-50 to-white will-change-transform">
-      {/* Remove grid pattern since it's not providing meaningful visual value */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-8 text-center">
-        <div className="relative z-10">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl text-center">
-              <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-                Master <span className="text-blue-600">Any Language</span>
-                <br />
-                Through Typing
-              </h1>
-              <div className="mt-6">
-                <span className="inline-flex items-center rounded-full bg-blue-100 px-4 py-1 text-sm font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10 mr-2">
-                  🎁 Pre-Launch: First 100 users get Free Lifetime Premium
-                </span>
-                <span className="mt-2 inline-flex items-center rounded-full bg-purple-100 px-4 py-1 text-sm font-medium text-purple-700 ring-1 ring-inset ring-purple-700/10">
-                  🚀 First 1000: Early Access to Features
-                </span>
-              </div>
-              <div className="mt-6">
-                <div className="mx-auto max-w-3xl bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-blue-100 transform hover:scale-[1.02] transition-transform duration-300">
-                  <p className="text-xl leading-8 text-gray-700 font-medium">
-                    Be among the first to experience our{" "}
-                    <span className="text-blue-600 font-semibold">revolutionary platform</span>{" "}
-                    for learning to type in multiple languages.
-                  </p>
-                  <div className="mt-4 flex flex-wrap gap-2 justify-center">
-                    {["Korean", "Bangla", "Persian", "Japanese"].map((lang) => (
-                      <span key={lang} className="inline-flex items-center rounded-full bg-blue-50 px-4 py-1.5 text-md font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10">
-                        {lang}
-                      </span>
-                    ))}
-                    <span className="inline-flex items-center rounded-full bg-blue-50 px-4 py-1.5 text-md font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10">
-                      & more!
-                    </span>
-                  </div>
+    <div className="relative overflow-hidden bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 will-change-transform">
+      {/* Animated background */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/30 via-cyan-500/30 to-blue-500/30 blur-3xl" />
+      </div>
+
+      <div className="relative z-10 mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
+        <div className="mx-auto max-w-[90rem]">
+          {/* Hero Section */}
+          <div className="text-center mb-16">
+            <h1 className="text-6xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 mb-6 animate-gradient">
+              Smarter Shopping
+              <br />
+              <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
+                Simpler Tools
+              </span>
+            </h1>
+            <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-8">
+              Your one-stop destination for baby essentials, home solutions, and powerful online tools.
+            </p>
+          </div>
+
+          {/* 4-World Portal Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 max-w-7xl mx-auto px-4">
+            <Link href="/baby-products" className="group">
+              <div className="relative h-full bg-gray-800/50 backdrop-blur-xl rounded-3xl p-8 border border-gray-700/50 transition-all duration-500 hover:scale-[1.02] hover:bg-gray-800/70 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative z-10">
+                  <div className="text-5xl mb-6 transform group-hover:scale-110 transition-transform duration-500">👶</div>
+                  <h3 className="text-2xl font-bold text-white mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">Baby Products</h3>
+                  <p className="text-gray-400">Curated essentials for your little ones</p>
                 </div>
               </div>
-              <div className="mt-6 text-sm text-gray-500">
-                <span className="inline-block">
-                  🏆 Early adopters receive exclusive in-app badges and items
-                </span>
+            </Link>
+
+            <Link href="/homeAndKitchen" className="group">
+              <div className="relative h-full bg-gray-800/50 backdrop-blur-xl rounded-3xl p-8 border border-gray-700/50 transition-all duration-500 hover:scale-[1.02] hover:bg-gray-800/70 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative z-10">
+                  <div className="text-5xl mb-6 transform group-hover:scale-110 transition-transform duration-500">🏡</div>
+                  <h3 className="text-2xl font-bold text-white mb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-400">Home & Kitchen</h3>
+                  <p className="text-gray-400">Smart gadgets & space-saving hacks</p>
+                </div>
               </div>
-              <div className="mt-10 flex items-center justify-center gap-x-6">
-                <button
-                  onClick={handleJoinWaitlist}
-                  className="rounded-full bg-blue-600 px-8 py-3 text-lg font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
-                >
-                  Join Waitlist Now
-                </button>
-                <Link
-                  href="/pricing"
-                  className="text-lg font-semibold leading-6 text-gray-900"
-                >
-                  View Pricing <span aria-hidden="true">→</span>
-                </Link>
+            </Link>
+
+            <Link href="/deals" className="group">
+              <div className="relative h-full bg-gray-800/50 backdrop-blur-xl rounded-3xl p-8 border border-gray-700/50 transition-all duration-500 hover:scale-[1.02] hover:bg-gray-800/70 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-transparent to-rose-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative z-10">
+                  <div className="text-5xl mb-6 transform group-hover:scale-110 transition-transform duration-500">🔥</div>
+                  <h3 className="text-2xl font-bold text-white mb-4 bg-clip-text text-transparent bg-gradient-to-r from-pink-400 to-rose-400">Hot Deals</h3>
+                  <p className="text-gray-400">Price tracking & exclusive offers</p>
+                </div>
+              </div>
+            </Link>
+
+            <Link href="/utilityTools" className="group">
+              <div className="relative h-full bg-gray-800/50 backdrop-blur-xl rounded-3xl p-8 border border-gray-700/50 transition-all duration-500 hover:scale-[1.02] hover:bg-gray-800/70 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-transparent to-violet-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative z-10">
+                  <div className="text-5xl mb-6 transform group-hover:scale-110 transition-transform duration-500">⚙️</div>
+                  <h3 className="text-2xl font-bold text-white mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-violet-400">Free Tools</h3>
+                  <p className="text-gray-400">Video downloaders & converters</p>
+                </div>
+              </div>
+            </Link>
+          </div>
+
+          {/* Live Activity Ticker */}
+          <div className="mt-16 max-w-4xl mx-auto">
+            <div className="relative overflow-hidden bg-gray-800/50 backdrop-blur-xl rounded-2xl border border-gray-700/50">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-pink-500/5" />
+              <div className="relative px-6 py-4">
+                <div className="flex items-center justify-between gap-8 text-sm md:text-base overflow-x-auto whitespace-nowrap scrollbar-hide">
+                  <div className="flex items-center space-x-2 text-blue-400">
+                    <span className="relative flex h-3 w-3">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-3 w-3 bg-blue-500"></span>
+                    </span>
+                    <span>Live: 35% off Philips Baby Monitor</span>
+                  </div>
+                  <div className="hidden md:block text-purple-400">200+ tools used today</div>
+                  <div className="text-emerald-400">New deals added hourly</div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <SignupDialog 
-        isOpen={isSignupOpen}
-        onClose={() => setIsSignupOpen(false)}
-      />
     </div>
   );
 }
