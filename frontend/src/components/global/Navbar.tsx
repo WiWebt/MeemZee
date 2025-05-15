@@ -3,17 +3,17 @@
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Bars3Icon, XMarkIcon, ArrowRightOnRectangleIcon } from '@heroicons/react/24/outline';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { useNavbar } from '@/contexts/NavbarContext';
 import { useState, useEffect } from 'react';
 import SignupDialog from './SignupDialog';
 
 const navigation = [
   // { name: 'Pricing', href: '/pricing' },
-  { name: 'Baby Products', href: '/babyProducts' },
-  { name: 'Home & Kitchen', href: '/homeAndKitchen' },
-  { name: 'Price Tracker', href: '/priceTracker' },
-  { name: 'Utility Tools', href: '/utilityTools' },
+  { name: 'Baby Products', href: '/baby-products' },
+  { name: 'Home & Kitchen', href: '/home-kitchen' },
+  { name: 'Price Tracker', href: '/price-tracker' },
+  { name: 'Utility Tools', href: '/utility-tools' },
 ];
 
 export default function Navbar() {

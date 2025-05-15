@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { FaBabyCarriage, FaHome, FaFire, FaTools } from 'react-icons/fa';
 
 export default function Landing() {
   return (
@@ -33,40 +34,48 @@ export default function Landing() {
               <div className="relative h-full bg-gray-800/50 backdrop-blur-xl rounded-3xl p-8 border border-gray-700/50 transition-all duration-500 hover:scale-[1.02] hover:bg-gray-800/70 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative z-10">
-                  <div className="text-5xl mb-6 transform group-hover:scale-110 transition-transform duration-500">👶</div>
+                  <div className="mb-6 transform group-hover:scale-110 transition-transform duration-500">
+                    <FaBabyCarriage className="w-16 h-16 text-blue-400 group-hover:text-blue-300 transition-colors duration-500" />
+                  </div>
                   <h3 className="text-2xl font-bold text-white mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">Baby Products</h3>
                   <p className="text-gray-400">Curated essentials for your little ones</p>
                 </div>
               </div>
             </Link>
 
-            <Link href="/homeAndKitchen" className="group">
+            <Link href="/home-kitchen" className="group">
               <div className="relative h-full bg-gray-800/50 backdrop-blur-xl rounded-3xl p-8 border border-gray-700/50 transition-all duration-500 hover:scale-[1.02] hover:bg-gray-800/70 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative z-10">
-                  <div className="text-5xl mb-6 transform group-hover:scale-110 transition-transform duration-500">🏡</div>
+                  <div className="mb-6 transform group-hover:scale-110 transition-transform duration-500">
+                    <FaHome className="w-16 h-16 text-cyan-400 group-hover:text-cyan-300 transition-colors duration-500" />
+                  </div>
                   <h3 className="text-2xl font-bold text-white mb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-400">Home & Kitchen</h3>
                   <p className="text-gray-400">Smart gadgets & space-saving hacks</p>
                 </div>
               </div>
             </Link>
 
-            <Link href="/deals" className="group">
+            <Link href="/price-tracker" className="group">
               <div className="relative h-full bg-gray-800/50 backdrop-blur-xl rounded-3xl p-8 border border-gray-700/50 transition-all duration-500 hover:scale-[1.02] hover:bg-gray-800/70 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-transparent to-rose-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative z-10">
-                  <div className="text-5xl mb-6 transform group-hover:scale-110 transition-transform duration-500">🔥</div>
+                  <div className="mb-6 transform group-hover:scale-110 transition-transform duration-500">
+                    <FaFire className="w-16 h-16 text-pink-400 group-hover:text-pink-300 transition-colors duration-500" />
+                  </div>
                   <h3 className="text-2xl font-bold text-white mb-4 bg-clip-text text-transparent bg-gradient-to-r from-pink-400 to-rose-400">Hot Deals</h3>
                   <p className="text-gray-400">Price tracking & exclusive offers</p>
                 </div>
               </div>
             </Link>
 
-            <Link href="/utilityTools" className="group">
+            <Link href="/utility-tools" className="group">
               <div className="relative h-full bg-gray-800/50 backdrop-blur-xl rounded-3xl p-8 border border-gray-700/50 transition-all duration-500 hover:scale-[1.02] hover:bg-gray-800/70 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-transparent to-violet-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative z-10">
-                  <div className="text-5xl mb-6 transform group-hover:scale-110 transition-transform duration-500">⚙️</div>
+                  <div className="mb-6 transform group-hover:scale-110 transition-transform duration-500">
+                    <FaTools className="w-16 h-16 text-purple-400 group-hover:text-purple-300 transition-colors duration-500" />
+                  </div>
                   <h3 className="text-2xl font-bold text-white mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-violet-400">Free Tools</h3>
                   <p className="text-gray-400">Video downloaders & converters</p>
                 </div>

@@ -41,7 +41,7 @@ const utilities = [
     icon: FiVideo,
     gradient: 'from-pink-500 to-rose-500',
     color: 'text-pink-600',
-    href: '/utilityTools/insta-reel',
+    href: '/utility-tools/insta-reel',
   },
   {
     name: 'Instagram Story Downloader',
@@ -49,7 +49,7 @@ const utilities = [
     icon: FiDownload,
     gradient: 'from-purple-500 to-indigo-500',
     color: 'text-purple-600',
-    href: '/utilityTools/insta-story',
+    href: '/utility-tools/insta-story',
   },
   {
     name: 'Instagram Photo Downloader',
@@ -57,7 +57,7 @@ const utilities = [
     icon: FiImage,
     gradient: 'from-blue-500 to-cyan-500',
     color: 'text-blue-600',
-    href: '/utilityTools/insta-photo',
+    href: '/utility-tools/insta-photo',
   },
   {
     name: 'YouTube Video Downloader',
@@ -65,7 +65,7 @@ const utilities = [
     icon: FiVideo,
     gradient: 'from-red-500 to-orange-500',
     color: 'text-red-600',
-    href: '/utilityTools/youtube',
+    href: '/utility-tools/youtube',
   },
   {
     name: 'PDF Merger',
@@ -73,7 +73,7 @@ const utilities = [
     icon: FiFile,
     gradient: 'from-green-500 to-emerald-500',
     color: 'text-green-600',
-    href: '/utilityTools/pdf-merger',
+    href: '/utility-tools/pdf-merger',
   },
   {
     name: 'JPG to PNG Converter',
@@ -81,7 +81,7 @@ const utilities = [
     icon: FiRefreshCw,
     gradient: 'from-yellow-500 to-amber-500',
     color: 'text-yellow-600',
-    href: '/utilityTools/jpg-to-png',
+    href: '/utility-tools/jpg-to-png',
   },
   {
     name: 'Image Background Remover',
@@ -89,7 +89,7 @@ const utilities = [
     icon: FiZap,
     gradient: 'from-violet-500 to-purple-500',
     color: 'text-violet-600',
-    href: '/utilityTools/remove-bg',
+    href: '/utility-tools/remove-bg',
   },
 ];
 
