@@ -64,7 +64,7 @@ export default function Footer() {
           <div className="space-y-6">
             <Link href="/" className="flex items-center gap-2">
               <Image
-                src="/logo.svg"
+                src="/logo.png"
                 alt="MeemZee Logo"
                 width={40}
                 height={40}

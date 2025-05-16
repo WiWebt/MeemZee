@@ -48,7 +48,7 @@ export default function Navbar() {
               className="flex items-center gap-2 hover:opacity-80 transition-opacity shrink-0"
             >
               <Image
-                src="/logo.svg"
+                src="/logo.png"
                 alt="MeemZee Logo"
                 width={40}
                 height={40}

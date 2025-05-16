@@ -39,6 +39,8 @@ def get_best_dash_url(video_url):
     ydl_opts = {
         'quiet': True,
         'skip_download': True,
+        'cookiesfrombrowser': ('chrome',),  # Use Chrome cookies
+        'cookiesfile': None,  # Will be created by yt-dlp
     }
 
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:

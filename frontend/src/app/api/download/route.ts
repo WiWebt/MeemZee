@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { fetchWithRetry } from '@/utils/api';
 
 export const runtime = 'edge';
 
@@ -6,7 +7,7 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
     
-    const response = await fetch('https://meemzee.onrender.com/utilities/download', {
+    const response = await fetchWithRetry('/utilities/download', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -17,6 +18,10 @@ export async function POST(request: Request) {
         quality: '720',
         url: body.url
       }),
+    }, {
+      maxRetries: 3,
+      delayMs: 200,
+      backoffFactor: 2
     });
 
     if (!response.ok) {

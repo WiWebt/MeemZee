@@ -12,16 +12,14 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'MeemZee',
-  description:
-    'Learn to type in over 50 languages with our gamified platform. Start with Bangla, Korean, Persian, or Japanese today!',
-  keywords:
-    'typing tutor, language learning, typing practice, multilingual typing, language certification',
+  title: 'Free Online Utilities & Tools - Meemzee',
+  description: 'Free-to-use online tools for everyday tasks. Download videos from YouTube & Instagram, convert files, and use various text utilities.',
+  keywords: 'youtube downloader, instagram video downloader, file converter, online tools, free utilities, pdf tools, text utilities, qr code generator',
   icons: {
     icon: [
       {
-        url: '/logo.svg',
-        type: 'image/svg+xml',
+        url: '/logo.png',
+        type: 'image/png',
       },
     ],
   },

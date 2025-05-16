@@ -8,7 +8,7 @@ export default function PricingHeader() {
       <div className="absolute -top-40 left-1/2 transform -translate-x-1/2 z-10">
         <div className="relative w-32 h-32 animate-bounce-slow">
           <Image
-            src="/logo.svg"
+            src="/logo.png"
             alt="MeemZee Mascot"
             width={128}
             height={128}
