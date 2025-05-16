@@ -29,7 +29,7 @@ export default function PricingHeader() {
             </div>
           </div>
           <p className="text-lg font-semibold text-gray-900">
-            &quot;Ready to level up your language typing skills?&quot;
+            &quot;Ready to enhance your online shopping and productivity?&quot;
           </p>
         </div>
       </div>
@@ -39,7 +39,7 @@ export default function PricingHeader() {
           Pricing Plans
         </h2>
         <p className="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-          Choose your learning path
+          Choose your plan
         </p>
       </div>
 

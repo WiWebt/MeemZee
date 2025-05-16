@@ -55,7 +55,7 @@ export default function PrivacyPage() {
                   </div>
                   <div>
                     <strong className="text-gray-900 block mb-1 text-sm">Usage Data</strong>
-                    <span className="text-gray-700 text-sm">Information about your interactions with our services, such as typing performance and progress.</span>
+                    <span className="text-gray-700 text-sm">Information about your interactions with our services, such as browsing history and tool usage.</span>
                   </div>
                 </li>
                 <li className="flex items-start">
@@ -89,7 +89,7 @@ export default function PrivacyPage() {
                   <svg className="w-4 h-4 text-blue-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  Personalize your learning experience.
+                  Personalize your shopping and tool experience.
                 </li>
                 <li className="flex items-center">
                   <svg className="w-4 h-4 text-blue-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">

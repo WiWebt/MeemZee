@@ -130,14 +130,14 @@ export default function AuthStatusDialog({ isOpen, onClose, status }: AuthStatus
                         >
                             <Dialog.Panel className="relative w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-8 text-center align-middle shadow-xl transition-all">
                                 {/* Close button with larger hit area */}
-                                <div className="absolute right-2 top-2 z-50">
-                                    <button
-                                        onClick={onClose}
-                                        className="p-3 rounded-full text-gray-400 hover:text-gray-500 hover:bg-gray-100"
-                                    >
-                                        <XMarkIcon className="h-6 w-6" />
-                                    </button>
-                                </div>
+                                <button 
+                                    onClick={onClose} 
+                                    className="absolute right-4 top-4 rounded-lg p-1 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                                    title="Close dialog"
+                                    aria-label="Close dialog"
+                                >
+                                    <XMarkIcon className="w-6 h-6 text-gray-400" />
+                                </button>
 
                                 {/* Success/Error Icon with gradient background */}
                                 <div className="relative mb-8">
@@ -186,7 +186,7 @@ export default function AuthStatusDialog({ isOpen, onClose, status }: AuthStatus
                                         </Dialog.Title>
                                         <Dialog.Description className="text-gray-600 text-lg leading-relaxed max-w-sm mx-auto">
                                             {isSuccess 
-                                                ? "You're now part of our vibrant community of language enthusiasts. Get ready to revolutionize the way you work with AI!"
+                                                ? "You're now part of our vibrant community. Get ready to explore our curated products and free tools!"
                                                 : "We couldn't complete the authentication process. Please try again or contact our support team if the problem persists."}
                                         </Dialog.Description>
                                     </div>

@@ -108,11 +108,10 @@ export default function About() {
               Our Mission
             </motion.h2>
             <motion.p variants={fadeInUp} className="mt-2 text-5xl font-bold leading-[1.2] tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-blue-800 to-blue-900 sm:text-6xl py-2">
-              Revolutionizing Language Learning
+              Simplifying Digital Life
             </motion.p>
             <motion.p variants={fadeInUp} className="mt-6 text-lg leading-8 text-gray-600">
-              MeemZee is a revolutionary typing tutor and language learning platform that combines 
-              engaging gamified experiences with cutting-edge AI-driven personalization.
+              MeemZee is a multi-functional platform that combines smart shopping, productivity tools, and everyday utilities. We&apos;re here to simplify your digital life with curated baby products, home solutions, and free online tools.
             </motion.p>
           </motion.div>
 
