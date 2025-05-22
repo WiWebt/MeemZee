@@ -223,8 +223,8 @@ export default function PrivacyPage() {
               </h2>
               <p className="text-gray-900 text-base">
                 If you have any questions about this Privacy Policy or wish to exercise your rights, you can contact us at:{" "}
-                <a href="mailto:meemzee@gmail.com" className="text-blue-600 hover:text-blue-800 underline">
-                  meemzee@gmail.com
+                <a href="mailto:support@meemzee.com" className="text-blue-600 hover:text-blue-800 underline">
+                  support@meemzee.com
                 </a>
               </p>
             </section>

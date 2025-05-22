@@ -194,7 +194,7 @@ export default function About() {
                       <FiMail className="h-5 w-5 text-blue-600 mr-2" />
                       Contact Us
                     </h3>
-                    <p className="mt-2 text-gray-600">meemzee@gmail.com</p>
+                    <p className="mt-2 text-gray-600">support@meemzee.com</p>
                   </motion.div>
                 </div>
               </motion.div>

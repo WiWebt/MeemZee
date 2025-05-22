@@ -8,16 +8,11 @@ interface Product {
   name: string;
   image: string;
   category: string;
-  prices: {
-    amazon: number;
-    flipkart: number;
-    meesho: number;
-  };
-  links: {
-    amazon: string;
-    flipkart: string;
-    meesho: string;
-  };
+  retailers: {
+    name: string;
+    price: number;
+    link: string;
+  }[];
 }
 
 interface ProductGalleryProps {
@@ -26,24 +21,45 @@ interface ProductGalleryProps {
 
 export default function ProductGallery({ products }: ProductGalleryProps) {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [searchQuery, setSearchQuery] = useState<string>('');
 
   const categories = ['all', ...new Set(products.map(product => product.category))];
   
-  const filteredProducts = selectedCategory === 'all'
-    ? products
-    : products.filter(product => product.category === selectedCategory);
+  const filteredProducts = products
+    .filter(product => selectedCategory === 'all' || product.category === selectedCategory)
+    .filter(product => 
+      searchQuery === '' || 
+      product.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
 
-  const getBestPrice = (prices: Product['prices']) => {
-    return Math.min(...Object.values(prices));
+  const getBestPrice = (retailers: Product['retailers']) => {
+    return Math.min(...retailers.map(r => r.price));
   };
-
-  const getBestPriceRetailer = (prices: Product['prices']) => {
-    const bestPrice = getBestPrice(prices);
-    return Object.entries(prices).find(([, price]) => price === bestPrice)?.[0];
+  
+  const getBestPriceRetailer = (retailers: Product['retailers']) => {
+    const bestPrice = getBestPrice(retailers);
+    return retailers.find(r => r.price === bestPrice)?.name;
   };
 
   return (
     <div>
+      {/* Search Input */}
+      <div className="mb-6 flex justify-center">
+        <input
+          type="text"
+          placeholder="Search products..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          className="w-full max-w-md px-4 py-2 rounded-lg border border-gray-300 
+            text-gray-800 placeholder-gray-500
+            bg-white shadow-sm
+            transition-all duration-200
+            focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent
+            focus:shadow-lg
+            hover:shadow-md hover:border-gray-400"
+        />
+      </div>
+
       {/* Category Filter */}
       <div className="flex flex-wrap gap-2 justify-center mb-8">
         {categories.map((category) => (
@@ -83,27 +99,27 @@ export default function ProductGallery({ products }: ProductGalleryProps) {
               <div className="text-xs text-blue-600 font-medium mb-1">
                 {product.category}
               </div>
-              <h3 className="font-semibold text-gray-900 mb-2">
+              <h3 className="font-bold text-gray-900 text-lg mb-2">
                 {product.name}
               </h3>
 
               {/* Price Comparison */}
               <div className="space-y-2">
-                {Object.entries(product.prices).map(([retailer, price]) => (
+                {product.retailers.map((retailer) => (
                   <a
-                    key={retailer}
-                    href={product.links[retailer as keyof typeof product.links]}
+                    key={retailer.name}
+                    href={retailer.link}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`flex items-center justify-between p-2 rounded-lg transition-colors
-                      ${price === getBestPrice(product.prices)
+                      ${retailer.price === getBestPrice(product.retailers)
                         ? 'bg-green-50 text-green-700'
                         : 'bg-gray-50 text-gray-600 hover:bg-gray-100'
                       }`}
                   >
-                    <span className="font-medium capitalize">{retailer}</span>
-                    <span className={price === getBestPrice(product.prices) ? 'font-semibold' : ''}>
-                      ₹{price.toLocaleString()}
+                    <span className="font-medium capitalize">{retailer.name}</span>
+                    <span className={retailer.price === getBestPrice(product.retailers) ? 'font-semibold' : ''}>
+                      ₹{retailer.price.toLocaleString()}
                     </span>
                   </a>
                 ))}
@@ -111,7 +127,7 @@ export default function ProductGallery({ products }: ProductGalleryProps) {
 
               {/* Best Price Badge */}
               <div className="mt-3 text-xs text-gray-500 text-center">
-                Best price on {getBestPriceRetailer(product.prices)?.toUpperCase()}
+                Best price on {getBestPriceRetailer(product.retailers)?.toUpperCase()}
               </div>
             </div>
           </div>

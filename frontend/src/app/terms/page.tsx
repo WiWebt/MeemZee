@@ -171,10 +171,10 @@ export default function TermsPage() {
               <p className="text-gray-700 text-base">
                 If you have any questions about these Terms, contact us at{" "}
                 <a 
-                  href="mailto:meemzee@gmail.com" 
+                  href="mailto:support@meemzee.com" 
                   className="text-primary-600 hover:text-primary-500 underline"
                 >
-                  meemzee@gmail.com
+                  support@meemzee.com
                 </a>
               </p>
             </section>

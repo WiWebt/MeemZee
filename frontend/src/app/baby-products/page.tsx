@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import dynamic from 'next/dynamic';
 import { Suspense } from 'react';
+import babyProductsData from '@/data/baby-products.json';
 
 const ProductGallery = dynamic(() => import('@/components/products/ProductGallery'), {
   ssr: true,
@@ -38,74 +39,6 @@ const staggerChildren = {
     },
   },
 };
-
-const babyProducts = [
-  {
-    id: 1,
-    name: "Premium Baby Diapers (Pack of 42)",
-    image: "/images/products/baby/diapers.jpg",
-    category: "Baby Care",
-    prices: {
-      amazon: 699,
-      flipkart: 749,
-      meesho: 599
-    },
-    links: {
-      amazon: "https://amazon.in/baby-diapers",
-      flipkart: "https://flipkart.com/baby-diapers",
-      meesho: "https://meesho.com/baby-diapers"
-    }
-  },
-  {
-    id: 2,
-    name: "Educational Baby Play Mat",
-    image: "/images/products/baby/playmat.jpg",
-    category: "Toys & Games",
-    prices: {
-      amazon: 1499,
-      flipkart: 1299,
-      meesho: 999
-    },
-    links: {
-      amazon: "https://amazon.in/baby-playmat",
-      flipkart: "https://flipkart.com/baby-playmat",
-      meesho: "https://meesho.com/baby-playmat"
-    }
-  },
-  {
-    id: 3,
-    name: "Baby Feeding Bottle Set",
-    image: "/images/products/baby/bottles.jpg",
-    category: "Feeding",
-    prices: {
-      amazon: 499,
-      flipkart: 449,
-      meesho: 399
-    },
-    links: {
-      amazon: "https://amazon.in/baby-bottles",
-      flipkart: "https://flipkart.com/baby-bottles",
-      meesho: "https://meesho.com/baby-bottles"
-    }
-  },
-  {
-    id: 4,
-    name: "Soft Cotton Baby Clothes Set",
-    image: "/images/products/baby/clothes.jpg",
-    category: "Clothing",
-    prices: {
-      amazon: 899,
-      flipkart: 799,
-      meesho: 699
-    },
-    links: {
-      amazon: "https://amazon.in/baby-clothes",
-      flipkart: "https://flipkart.com/baby-clothes",
-      meesho: "https://meesho.com/baby-clothes"
-    }
-  },
-  // Add more products...
-];
 
 export default function BabyProductsPage() {
   return (
@@ -162,7 +95,7 @@ export default function BabyProductsPage() {
                   </div>
                 </div>
               }>
-                <ProductGallery products={babyProducts} />
+                <ProductGallery products={babyProductsData.products} />
               </Suspense>
             </motion.div>
           </div>

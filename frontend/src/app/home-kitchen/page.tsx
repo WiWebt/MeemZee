@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import dynamic from 'next/dynamic';
+import homeKitchenProducts from '@/data/home-kitchen-products.json';
 
 const ProductGallery = dynamic(() => import('@/components/products/ProductGallery'), {
   ssr: true,
@@ -37,74 +38,6 @@ const staggerChildren = {
     },
   },
 };
-
-const homeProducts = [
-  {
-    id: 1,
-    name: "Smart Air Fryer 4.5L",
-    image: "/images/products/home/airfryer.jpg",
-    category: "Kitchen Appliances",
-    prices: {
-      amazon: 5999,
-      flipkart: 5499,
-      meesho: 4999
-    },
-    links: {
-      amazon: "https://amazon.in/smart-airfryer",
-      flipkart: "https://flipkart.com/smart-airfryer",
-      meesho: "https://meesho.com/smart-airfryer"
-    }
-  },
-  {
-    id: 2,
-    name: "Non-Stick Cookware Set (5 Pieces)",
-    image: "/images/products/home/cookware.jpg",
-    category: "Cookware",
-    prices: {
-      amazon: 2499,
-      flipkart: 2299,
-      meesho: 1999
-    },
-    links: {
-      amazon: "https://amazon.in/cookware-set",
-      flipkart: "https://flipkart.com/cookware-set",
-      meesho: "https://meesho.com/cookware-set"
-    }
-  },
-  {
-    id: 3,
-    name: "Robot Vacuum Cleaner",
-    image: "/images/products/home/vacuum.jpg",
-    category: "Home Appliances",
-    prices: {
-      amazon: 15999,
-      flipkart: 14999,
-      meesho: 13999
-    },
-    links: {
-      amazon: "https://amazon.in/robot-vacuum",
-      flipkart: "https://flipkart.com/robot-vacuum",
-      meesho: "https://meesho.com/robot-vacuum"
-    }
-  },
-  {
-    id: 4,
-    name: "Storage Container Set (8 Pieces)",
-    image: "/images/products/home/storage.jpg",
-    category: "Storage & Organization",
-    prices: {
-      amazon: 899,
-      flipkart: 799,
-      meesho: 699
-    },
-    links: {
-      amazon: "https://amazon.in/storage-containers",
-      flipkart: "https://flipkart.com/storage-containers",
-      meesho: "https://meesho.com/storage-containers"
-    }
-  },
-  // Add more products...
-];
 
 export default function HomeAndKitchenPage() {
   return (
@@ -148,7 +81,7 @@ export default function HomeAndKitchenPage() {
               variants={staggerChildren}
               className="mx-auto mt-16 max-w-7xl"
             >
-              <ProductGallery products={homeProducts} />
+              <ProductGallery products={homeKitchenProducts.products} />
             </motion.div>
           </div>
         </div>
