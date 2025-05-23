@@ -3,7 +3,7 @@
         {
             "id": 1,
             "name": "Premium Baby Diapers (Pack of 42)",
-            "image": "https://m.media-amazon.com/images/I/41uc6zfpeJL.jpg",
+            "images": ["https://m.media-amazon.com/images/I/41uc6zfpeJL.jpg"],
             "category": "Baby Care",
             "retailers": [
                 {
@@ -26,7 +26,7 @@
         {
             "id": 2,
             "name": "Educational Baby Play Mat",
-            "image": "https://m.media-amazon.com/images/I/41uc6zfpeJL.jpg",
+            "images": ["https://m.media-amazon.com/images/I/41uc6zfpeJL.jpg"],
             "category": "Toys & Games",
             "retailers": [
                 {
@@ -49,7 +49,7 @@
         {
             "id": 3,
             "name": "Baby Feeding Bottle Set",
-            "image": "https://m.media-amazon.com/images/I/41uc6zfpeJL.jpg",
+            "images": ["https://m.media-amazon.com/images/I/41uc6zfpeJL.jpg"],
             "category": "Feeding",
             "retailers": [
                 {
@@ -72,7 +72,7 @@
         {
             "id": 4,
             "name": "Soft Cotton Baby Clothes Set",
-            "image": "https://m.media-amazon.com/images/I/41uc6zfpeJL.jpg",
+            "images": ["https://m.media-amazon.com/images/I/41uc6zfpeJL.jpg"],
             "category": "Clothing",
             "retailers": [
                 {

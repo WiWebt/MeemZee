@@ -6,7 +6,7 @@ import { useState } from 'react';
 interface Product {
   id: number;
   name: string;
-  image: string;
+  images: string[];  // Changed from single image to array of images
   category: string;
   retailers: {
     name: string;
@@ -78,47 +78,70 @@ export default function ProductGallery({ products }: ProductGalleryProps) {
       </div>
 
       {/* Product Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {filteredProducts.map((product) => (
           <div
             key={product.id}
-            className="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden border border-gray-100"
+            className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 group"
           >
-            {/* Product Image */}
-            <div className="relative h-48 bg-gray-100">
-              <Image
-                src={product.image}
-                alt={product.name}
-                fill
-                className="object-cover"
-              />
+            {/* Product Image Carousel */}
+            <div className="relative h-64 bg-gray-50 group-hover:bg-gray-100 transition-colors">
+              <div className="flex overflow-x-auto snap-x snap-mandatory">
+                {product.images.map((image, index) => (
+                  <div key={index} className="relative w-full h-64 flex-shrink-0 snap-center">
+                    <Image
+                      src={image}
+                      alt={`${product.name} - Image ${index + 1}`}
+                      fill
+                      className="object-cover transition-opacity duration-300"
+                      priority={index === 0}
+                    />
+                  </div>
+                ))}
+              </div>
+              <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-2">
+                {product.images.map((_, index) => (
+                  <button
+                    key={index}
+                    className="w-2 h-2 rounded-full bg-gray-300 hover:bg-gray-400 transition-colors"
+                    aria-label={`View image ${index + 1}`}
+                    onClick={() => {
+                      const container = document.querySelector('.snap-x');
+                      container?.scrollTo({
+                        left: index * container.clientWidth,
+                        behavior: 'smooth'
+                      });
+                    }}
+                  />
+                ))}
+              </div>
             </div>
 
             {/* Product Info */}
-            <div className="p-4">
-              <div className="text-xs text-blue-600 font-medium mb-1">
+            <div className="p-6">
+              <div className="text-xs font-medium text-blue-600 tracking-wider uppercase mb-2">
                 {product.category}
               </div>
-              <h3 className="font-bold text-gray-900 text-lg mb-2">
+              <h3 className="font-bold text-gray-900 text-xl mb-4 group-hover:text-blue-600 transition-colors">
                 {product.name}
               </h3>
 
               {/* Price Comparison */}
-              <div className="space-y-2">
+              <div className="space-y-2.5">
                 {product.retailers.map((retailer) => (
                   <a
                     key={retailer.name}
                     href={retailer.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`flex items-center justify-between p-2 rounded-lg transition-colors
+                    className={`flex text-gray-600 items-center justify-between px-4 py-2.5 rounded-lg transition-all
                       ${retailer.price === getBestPrice(product.retailers)
-                        ? 'bg-green-50 text-green-700'
-                        : 'bg-gray-50 text-gray-600 hover:bg-gray-100'
+                        ? 'bg-green-50 text-green-700 hover:bg-green-100'
+                        : 'bg-gray-50 hover:bg-gray-100'
                       }`}
                   >
-                    <span className="font-medium capitalize">{retailer.name}</span>
-                    <span className={retailer.price === getBestPrice(product.retailers) ? 'font-semibold' : ''}>
+                    <span className="text-sm font-medium capitalize tracking-wide">{retailer.name}</span>
+                    <span className={`text-sm ${retailer.price === getBestPrice(product.retailers) ? 'font-semibold' : 'text-gray-600'}`}>
                       ₹{retailer.price.toLocaleString()}
                     </span>
                   </a>
@@ -126,8 +149,8 @@ export default function ProductGallery({ products }: ProductGalleryProps) {
               </div>
 
               {/* Best Price Badge */}
-              <div className="mt-3 text-xs text-gray-500 text-center">
-                Best price on {getBestPriceRetailer(product.retailers)?.toUpperCase()}
+              <div className="mt-4 text-xs text-gray-400 text-center tracking-wide">
+                Best price available on {getBestPriceRetailer(product.retailers)?.toUpperCase()}
               </div>
             </div>
           </div>
