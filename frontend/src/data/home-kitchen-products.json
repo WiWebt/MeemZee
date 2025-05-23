@@ -160,6 +160,29 @@
           "link": "https://meesho.com/smart-airfryer"
         }
       ]
-    }
+    },
+    {
+      "id": 8,
+      "name": "Mesh Cleaner",
+      "image": "https://m.media-amazon.com/images/W/MEDIAX_1215821-T1/images/I/51cY4nq5-fL._SX679_.jpg",
+      "category": "Home Cleaning",
+      "retailers": [
+        {
+          "name": "amazon",
+          "price": 198,
+          "link": "amazon.in/Multifunctional-Cleaning-Extended-Cleaner-Double-Sided/dp/B0CVV2ZQSP/ref=asc_df_B0CVV2ZQSP?mcid=6fab48e92eb93b0983defc5b1aa644f6&tag=googleshopdes-21&linkCode=df0&hvadid=709856082435&hvpos=&hvnetw=g&hvrand=866552704588616168&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9301536&hvtargid=pla-2293801113343&psc=1&gad_source=1"
+        },
+        {
+          "name": "meesho",
+          "price": 156,
+          "link": "https://www.meesho.com/owqust-big-size-2-in-1-mesh-cleaning-brush-wiper-with-extended-handle-window-cleaning-brush-net-cleaner-double-sided-window-cleaner-window-mesh-cleaner-pack-of-1/p/6jfvg2"
+        },
+        {
+          "name": "flipkart",
+          "price": 156,
+          "link": "https://www.flipkart.com/rbgiit-window-cleaning-brush-net-cleaner-double-sided-mesh-cleaner-pack-1-k1/p/itmf3a9c6a0d2fc1?pid=GLAHYVSCGZZHHHPG&lid=LSTGLAHYVSCGZZHHHPGODCD7Y&marketplace=FLIPKART&q=mesh+cleaner&store=rja&srno=s_1_1&otracker=search&otracker1=search&fm=Search&iid=a22cdda8-0f23-498c-bd0c-9b6c3f004af1.GLAHYVSCGZZHHHPG.SEARCH&ppt=sp&ppn=sp&ssid=6e2yo0d3400000001747980067991&qH=ad162a16996e4ba3"
+        }
+      ]
+    },
   ]
 }
